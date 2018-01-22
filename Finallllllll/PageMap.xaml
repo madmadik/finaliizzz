@@ -1,0 +1,18 @@
+﻿<Page x:Class="Finallllllll.PageMap"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Finallllllll"
+       xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="PageMap">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+        <m:Map CredentialsProvider="Amlfxp1v0IVmtmLrsna9G-nhUw5l3n6iMcWAh2EQrC6YZgLtoI8uSEBQ-7NXu1RK" 
+               Center="47.620574,-122.34942" ZoomLevel="12">
+            <m:Pushpin Location="47.620574,-122.34942"/>
+        </m:Map>
+    </Grid>
+</Page>
