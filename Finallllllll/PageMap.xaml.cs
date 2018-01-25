@@ -1,6 +1,12 @@
-﻿using System;
+﻿using Microsoft.Maps.MapControl.WPF;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +26,26 @@ namespace Finallllllll
     /// </summary>
     public partial class PageMap : Page
     {
+
+        
         public PageMap()
         {
             InitializeComponent();
+            string url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
+            string json;
+            using (WebClient webclient = new WebClient())
+            {
+                json = webclient.DownloadString(url);
+            }
+            Rootobject allEarthquakes = JsonConvert.DeserializeObject<Rootobject>(json);
+            foreach(var item in allEarthquakes.features)
+            {
+                 Pushpin point = new Pushpin();
+                 point.Location = new Location(item.geometry.coordinates[1], item.geometry.coordinates[0]);
+                 map.Children.Add(point);
+            }
+           
+
         }
     }
 }

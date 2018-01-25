@@ -10,9 +10,9 @@
       Title="PageMap">
 
     <Grid Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
-        <m:Map CredentialsProvider="Amlfxp1v0IVmtmLrsna9G-nhUw5l3n6iMcWAh2EQrC6YZgLtoI8uSEBQ-7NXu1RK" 
-               Center="47.620574,-122.34942" ZoomLevel="12">
-            <m:Pushpin Location="47.620574,-122.34942"/>
+        <m:Map x:Name="map" CredentialsProvider="Amlfxp1v0IVmtmLrsna9G-nhUw5l3n6iMcWAh2EQrC6YZgLtoI8uSEBQ-7NXu1RK" 
+                ZoomLevel="0">
+           
         </m:Map>
     </Grid>
 </Page>
