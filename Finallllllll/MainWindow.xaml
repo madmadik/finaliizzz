@@ -7,15 +7,16 @@
         xmlns:local="clr-namespace:Finallllllll"
         mc:Ignorable="d"
         Title="Система анализа землятресений" Height="350" Width="525">
-    <Grid>
+    <Grid Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="258*"/>
             <ColumnDefinition Width="259*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.ColumnSpan="3" Content="Общая статистика" HorizontalAlignment="Left" Margin="158,30,0,0" VerticalAlignment="Top" Width="201" Height="25" Click="Button_Click"/>
-        <Button Grid.ColumnSpan="3" Content="Хронология для стран" Margin="158,80,158,0" VerticalAlignment="Top" Height="25" Click="ChronologyClick"/>
-        <Button Grid.ColumnSpan="3" Content="Искать по координатам" HorizontalAlignment="Left" Margin="158,130,0,0" VerticalAlignment="Top" Width="201" Height="25"/>
-        <Button Grid.ColumnSpan="3" Content="Прогноз" HorizontalAlignment="Left" Margin="158,180,0,0" VerticalAlignment="Top" Width="201" Height="25"/>
+        <Button Grid.ColumnSpan="3" Content="Общая статистика" HorizontalAlignment="Left" Margin="158,38,0,0" VerticalAlignment="Top" Width="201" Height="25" Click="Button_Click"/>
+        <Button Content="Хронология для стран" Margin="158,82,158,0" VerticalAlignment="Top" Height="25" Click="ChronologyClick" Background="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" BorderBrush="#FF778787" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button Grid.ColumnSpan="3" Content="Искать по координатам" HorizontalAlignment="Left" Margin="158,129,0,0" VerticalAlignment="Top" Width="201" Height="25" Background="#FFB73A3A" BorderBrush="#FF736D80"/>
+        <Button Grid.ColumnSpan="3" Content="Прогноз" HorizontalAlignment="Left" Margin="158,176,0,0" VerticalAlignment="Top" Width="201" Height="25" Background="#FF46B036" BorderBrush="#FFC0BBC9"/>
     </Grid>
 </Window>

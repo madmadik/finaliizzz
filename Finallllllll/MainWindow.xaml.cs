@@ -20,6 +20,7 @@ namespace Finallllllll
     /// </summary>
     public partial class MainWindow : Window
     {
+      
         public MainWindow()
         {
             InitializeComponent();
@@ -27,13 +28,12 @@ namespace Finallllllll
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PageMap page = new PageMap();
-            this.Content = page;
+            this.Content = new PageMap();
         }
 
         private void ChronologyClick(object sender, RoutedEventArgs e)
         {
-        
+             
         }
     }
 }

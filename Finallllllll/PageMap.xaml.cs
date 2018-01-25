@@ -26,8 +26,7 @@ namespace Finallllllll
     /// </summary>
     public partial class PageMap : Page
     {
-
-        
+                
         public PageMap()
         {
             InitializeComponent();
@@ -41,14 +40,16 @@ namespace Finallllllll
             foreach(var item in allEarthquakes.features)
             {
                  Pushpin point = new Pushpin();
-                point.ToolTip = "Place: "+ item.properties.place+"\nMag: "+item.properties.mag+ "\nlon: "+ item.geometry.coordinates[1]+"\nlat: "+item.geometry.coordinates[0];
-
-  
+                 point.ToolTip = "Place: "+ item.properties.place+"\nMag: "+item.properties.mag+"\nlon: " + item.geometry.coordinates[1]+"\nlat: "+item.geometry.coordinates[0];
                  point.Location = new Location(item.geometry.coordinates[1], item.geometry.coordinates[0]);
                  map.Children.Add(point);
+                
             }
-           
-
+        }
+        private void Button_Back(object sender, RoutedEventArgs e)
+        {
+            MainWindow page = new MainWindow();
+            page.Show();
         }
     }
 }

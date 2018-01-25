@@ -12,7 +12,8 @@
     <Grid Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
         <m:Map x:Name="map" CredentialsProvider="Amlfxp1v0IVmtmLrsna9G-nhUw5l3n6iMcWAh2EQrC6YZgLtoI8uSEBQ-7NXu1RK" 
                 ZoomLevel="0">
-           
+
         </m:Map>
+        <Button Content="Назад" Click="Button_Back" HorizontalAlignment="Left" Margin="10,258,0,10" Width="73" Height="Auto" RenderTransformOrigin="0.545,0.838" Background="#FF884EB8"/>
     </Grid>
 </Page>
