@@ -4,15 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Finallllllll"
-       xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+      xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="PageMap">
-
     <Grid Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
-        <m:Map x:Name="map" CredentialsProvider="Amlfxp1v0IVmtmLrsna9G-nhUw5l3n6iMcWAh2EQrC6YZgLtoI8uSEBQ-7NXu1RK" 
-                ZoomLevel="0">
-
+        <m:Map x:Name="map" CredentialsProvider="Amlfxp1v0IVmtmLrsna9G-nhUw5l3n6iMcWAh2EQrC6YZgLtoI8uSEBQ-7NXu1RK" >
         </m:Map>
         <Button Content="Назад" Click="Button_Back" HorizontalAlignment="Left" Margin="10,258,0,10" Width="73" Height="Auto" RenderTransformOrigin="0.545,0.838" Background="#FF884EB8"/>
     </Grid>

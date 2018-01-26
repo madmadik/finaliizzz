@@ -16,13 +16,16 @@ using System.Windows.Shapes;
 namespace Finallllllll
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Menu.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class Menu : Page
     {
-      
-        public MainWindow()
-        { 
+        public Menu()
+        {
+            InitializeComponent();
         }
+        private void Button_Click(object sender,RoutedEventArgs e)=> this.NavigationService.Navigate(new PageMap());
+        private void ChronologyClick(object sender, RoutedEventArgs e) { }
+    
     }
 }
