@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Finallllllll"
       mc:Ignorable="d" 
       d:DesignHeight="300"
-      Title="Система анализа землетрясения" Height="350" Width="525">
+      Height="380" Width="525">
     <Grid Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -17,5 +17,6 @@
         <Button Grid.ColumnSpan="3" Content="Хронология для стран" HorizontalAlignment="Left" Margin="158,82,0,0" VerticalAlignment="Top" Height="27" Click="ChronologyClick" BorderBrush="#FF778787" Width="201" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
         <Button Grid.ColumnSpan="3" Content="Искать по координатам" HorizontalAlignment="Left" Margin="158,129,0,0" VerticalAlignment="Top" Width="201" Height="25" Background="#FFB73A3A" BorderBrush="#FF736D80"/>
         <Button Grid.ColumnSpan="3" Content="Прогноз" HorizontalAlignment="Left" Margin="158,176,0,0" VerticalAlignment="Top" Width="201" Height="25" Background="#FF46B036" BorderBrush="#FFC0BBC9"/>
+        <TextBlock Grid.ColumnSpan="3" Name="LastData" HorizontalAlignment="Left" Visibility="Visible" Margin="105,221,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="96" Width="308" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
     </Grid>
 </Page>

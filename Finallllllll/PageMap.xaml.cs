@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -23,25 +24,27 @@ namespace Finallllllll
     /// </summary>
     public partial class PageMap 
     {
+        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+
         public PageMap()
         {
             InitializeComponent();
-            string url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
+            this.WindowTitle = "Карта Сейсмоактивности";
             string json;
-            using (WebClient webclient = new WebClient())
+            using (StreamReader stream = new StreamReader(@"C:\data\data.json"))
             {
-
-                json = webclient.DownloadString(url);
+                json = stream.ReadToEnd();
             }
             Rootobject allEarthquakes = JsonConvert.DeserializeObject<Rootobject>(json);
             foreach (var item in allEarthquakes.features)
             {
-                Pushpin point = new Pushpin();
-                point.ToolTip = "Place: " + item.properties.place + "\nMag: " + item.properties.mag + "\nlon: " + item.geometry.coordinates[1] + "\nlat: " + item.geometry.coordinates[0] + "\nDepth: " + item.geometry.coordinates[2] + " km";
-                point.Location = new Location(item.geometry.coordinates[1], item.geometry.coordinates[0]);
-                map.Children.Add(point);
+                 Pushpin point = new Pushpin();
+                 point.ToolTip = "Место: " + item.properties.place +"\nВремя: "+DateTimeOffset.FromUnixTimeMilliseconds(item.properties.time)+ "\nМагнитуда: " + item.properties.mag + "\nШирина: " + item.geometry.coordinates[1] + "\nВысота: " + item.geometry.coordinates[0] + "\nГлубина: " + item.geometry.coordinates[2] + " км";
+                 point.Location = new Location(item.geometry.coordinates[1], item.geometry.coordinates[0]);
+                 map.Children.Add(point);
             }
         }
+        
         private void Button_Back(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Menu());

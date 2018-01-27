@@ -79,10 +79,6 @@
       <DependentUpon>PageMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rootobject.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
