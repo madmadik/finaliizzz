@@ -13,10 +13,10 @@
             <ColumnDefinition Width="258*"/>
             <ColumnDefinition Width="259*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.ColumnSpan="3" Content="Общая статистика" HorizontalAlignment="Left" Margin="158,38,0,0" VerticalAlignment="Top" Width="201" Height="25" Click="Button_Click"/>
-        <Button Grid.ColumnSpan="3" Content="Хронология для стран" HorizontalAlignment="Left" Margin="158,82,0,0" VerticalAlignment="Top" Height="27" Click="ChronologyClick" BorderBrush="#FF778787" Width="201" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
-        <Button Grid.ColumnSpan="3" Content="Искать по координатам" HorizontalAlignment="Left" Margin="158,129,0,0" VerticalAlignment="Top" Width="201" Height="25" Background="#FFB73A3A" BorderBrush="#FF736D80"/>
+        <Button Grid.ColumnSpan="3" Name="buton" Content="Общая статистика" HorizontalAlignment="Left" Margin="158,38,0,0" VerticalAlignment="Top" Width="201" Height="25" Click="Button_Stat"/>
+        <Button Grid.ColumnSpan="3" Content="Хронология для стран" HorizontalAlignment="Left" Margin="158,82,0,0" VerticalAlignment="Top" Height="27" BorderBrush="#FF778787" Width="201" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
+        <Button Grid.ColumnSpan="3" Content="Топ 20" HorizontalAlignment="Left" Margin="158,129,0,0" VerticalAlignment="Top" Width="201" Height="25" Click="Button_Top" Background="#FFB73A3A" BorderBrush="#FF736D80"/>
         <Button Grid.ColumnSpan="3" Content="Прогноз" HorizontalAlignment="Left" Margin="158,176,0,0" VerticalAlignment="Top" Width="201" Height="25" Background="#FF46B036" BorderBrush="#FFC0BBC9"/>
-        <TextBlock Grid.ColumnSpan="3" Name="LastData" HorizontalAlignment="Left" Visibility="Visible" Margin="105,221,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="96" Width="308" Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+        <TextBlock Grid.ColumnSpan="3" Name="LastData" HorizontalAlignment="Left" Visibility="Visible" Margin="110,230,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="96" Width="308" Text="{Binding text}"  Background="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
     </Grid>
 </Page>

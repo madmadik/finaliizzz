@@ -19,13 +19,8 @@ using System.Windows.Shapes;
 
 namespace Finallllllll
 {
-    /// <summary>
-    /// Логика взаимодействия для PageMap.xaml
-    /// </summary>
     public partial class PageMap 
     {
-        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-
         public PageMap()
         {
             InitializeComponent();
@@ -35,6 +30,7 @@ namespace Finallllllll
             {
                 json = stream.ReadToEnd();
             }
+           
             Rootobject allEarthquakes = JsonConvert.DeserializeObject<Rootobject>(json);
             foreach (var item in allEarthquakes.features)
             {
@@ -45,9 +41,7 @@ namespace Finallllllll
             }
         }
         
-        private void Button_Back(object sender, RoutedEventArgs e)
-        {
+        private void Button_Back(object sender, RoutedEventArgs e)=>
             this.NavigationService.Navigate(new Menu());
-        }
     }
 }
