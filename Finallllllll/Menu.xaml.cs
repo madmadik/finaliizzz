@@ -21,26 +21,22 @@ using System.Windows.Threading;
 
 namespace Finallllllll
 {
-    /// <summary>
-    /// Логика взаимодействия для Menu.xaml
-    /// </summary>
+
     public partial class Menu : Page
     {
-        
-        async void GetChanges()
+
+        async void GetChanges(Object source, System.Timers.ElapsedEventArgs e)
         {
             Rootobject allEarthquakes = await Async();
             int count = allEarthquakes.features.Length;
             string txt = "Последнее землетрясение: \nМагнитуда: " + allEarthquakes.features[count - 1].properties.mag + "\nРасположение: " + allEarthquakes.features[count - 1].properties.place + "\nВремя: " + DateTimeOffset.FromUnixTimeMilliseconds(allEarthquakes.features[count - 1].properties.time) + "\nГлубина: " + allEarthquakes.features[count - 1].geometry.coordinates[2] + "\nID: " + allEarthquakes.features[count - 1].id;
-            await LastData.Dispatcher.BeginInvoke((Action)(() => Do(txt)));
-            //string txt = "Последнее землетрясение: \nМагнитуда: " + allEarthquakes.features[count - 1].properties.mag + "\nРасположение: " + allEarthquakes.features[count - 1].properties.place + "\nВремя: " + DateTimeOffset.FromUnixTimeMilliseconds(allEarthquakes.features[count - 1].properties.time) + "\nГлубина: " + allEarthquakes.features[count - 1].geometry.coordinates[2] + "\nID: " + allEarthquakes.features[count - 1].id;
-           // Do(txt);
+
+            await Dispatcher.BeginInvoke(new ThreadStart(delegate { LastData.Text = txt; }));
         }
         Task<Rootobject> Async()
         {
             string path = @"C:\data\data.json";
             string json;
-            
             string url = @"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
             using (WebClient client = new WebClient())
             {
@@ -60,19 +56,18 @@ namespace Finallllllll
             return Task.Run(() =>
                 allEarthquakes);
         }
-      
-        public void Do(string txt)
-        {
-           
-         
-            LastData.Text = txt;   LastData.InvalidateVisual();
-        }
+
+        public void Do(string txt) =>
+            LastData.Text = txt;
         public Menu()
         {
             InitializeComponent();
             this.WindowTitle = "Система анализа землетрясении";
-           
-            GetChanges();
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+            aTimer.Interval = 2000;
+            aTimer.Elapsed += GetChanges;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
         }
         private void Button_Stat(object sender, RoutedEventArgs e) => this.NavigationService.Navigate(new PageMap());
         private void Button_Top(object sender, RoutedEventArgs e) => this.NavigationService.Navigate(new TopPage());
